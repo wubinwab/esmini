@@ -162,6 +162,7 @@ void AddEntityAction::Start(double simTime)
     LOG_INFO("Added entity {}", entity_->GetName());
 
     OSCAction::Start(simTime);
+    entity_->SetDirtyBits(Object::DirtyBit::TELEPORT);
 }
 
 void AddEntityAction::Step(double simTime, double dt)
